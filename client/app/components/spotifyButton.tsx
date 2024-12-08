@@ -1,7 +1,16 @@
+'use client'
+
+import { signIn } from "next-auth/react"
+
 export default function SpotifySignInButton() {
+  const handleSignIn = () => {
+    signIn("spotify", { callbackUrl: "/" })
+  }
+
   return (
     <button
-      className="w-2/5 bg-[#1DB954] font-mono hover:bg-[#1ed760] text-white font-semibold rounded-[3px] border-[2.5px] border-neutral-600 px-12 py-3 flex items-center justify-center gap-2 shadow-md transition-all"
+      onClick={handleSignIn}
+      className="w-full md:w-2/5 bg-[#1DB954] font-mono hover:bg-[#1ed760] text-white font-semibold rounded-[3px] border-[2.5px] border-neutral-600 px-12 py-3 flex items-center justify-center gap-2 shadow-md transition-all"
     >
       <svg
         width="24"

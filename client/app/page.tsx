@@ -1,5 +1,10 @@
 import SpotifySignInButton from "./components/spotifyButton";
-export default function Home() {
+import LogoutButton from "./components/logoutButton";
+import { auth } from "auth/auth";
+
+export default async function Home() {
+  const session = await auth();
+  console.log(session)
   return (
     <div className="w-3/5 flex flex-col m-auto space-y-8 items-center">
       <div className="mt-20 space-y-4 font-mono">
@@ -15,7 +20,7 @@ export default function Home() {
         </p>
 
       </div>
-      <SpotifySignInButton />
+      { session === null ? <SpotifySignInButton /> : <LogoutButton></LogoutButton>}
     </div>
   );
 }
