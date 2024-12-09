@@ -18,9 +18,18 @@ export default async function Home() {
         <p className="mb-3 text-left text-white-500 dark:text-white-400 leading-wide">
           We have you covered! For starters just login to your spotify account below and follow next steps.
         </p>
-
+        
+        { session !== null ? 
+          <p className="mb-3 text-left text-white-500 dark:text-white-400 leading-wide">
+            Now that you have logged in, play with some cool features that you can use with our app.
+          </p> 
+          :
+          <></>    
+        }
       </div>
       { session === null ? <SpotifySignInButton /> : <LogoutButton></LogoutButton>}
+
+
     </div>
   );
 }
