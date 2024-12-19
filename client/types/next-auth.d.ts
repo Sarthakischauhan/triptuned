@@ -5,6 +5,7 @@ declare module 'next-auth' {
     interface Session {
       accessToken?: string, 
       refreshToken?: string,
+      error?: string,
     }
     // I am making changes to a seperate spotifyToken type
     interface JWT {
