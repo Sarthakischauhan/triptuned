@@ -14,4 +14,7 @@ declare module 'next-auth' {
       refresh_token?: string
       error?: "RefreshTokenError"
     }
+    interface Account {
+      expires_in : number
+    }
   }
