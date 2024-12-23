@@ -12,7 +12,7 @@ declare module 'next-auth' {
       access_token: string
       expires_at: number
       refresh_token?: string
-      error?: "RefreshTokenError"
+      error?: string
     }
     interface Account {
       expires_in : number
